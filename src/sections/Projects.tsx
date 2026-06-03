@@ -71,6 +71,11 @@ export default function Projects() {
   }, []);
 
   const openGallery = (gallery: string[], title: string) => {
+    // Preload all images immediately so navigation is instant
+    gallery.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
     setActiveGallery(gallery);
     setActiveTitle(title);
     setCurrentImageIndex(0);
