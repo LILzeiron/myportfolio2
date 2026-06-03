@@ -60,27 +60,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact Info */}
-          <div>
-            <h4 className="font-black text-sm uppercase tracking-widest mb-4 pb-2 border-b-2 border-white/20">
-              Contact
-            </h4>
-            <div className="space-y-3">
-              <p className="font-medium text-sm text-white/70">
-                Santiago City, Isabela
-                <br />
-                Philippines
-              </p>
-              <p className="font-medium text-sm text-white/70">
-                BSIT Student at
-                <br />
-                Northeastern College
-              </p>
-              <div className="inline-block bg-neo-secondary text-black border-4 border-black px-3 py-1 font-black text-xs uppercase tracking-widest mt-2">
-                Open for Work
-              </div>
-            </div>
-          </div>
+
         </div>
 
         {/* Bottom Bar */}

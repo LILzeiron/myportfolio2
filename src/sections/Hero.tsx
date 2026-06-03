@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { ArrowDown, Star } from 'lucide-react';
+import { ArrowDown } from 'lucide-react';
 
 const stats = [
   { value: '5+', label: 'LANGUAGES' },
@@ -55,18 +55,6 @@ export default function Hero() {
       <div className="absolute inset-0 bg-halftone opacity-30 pointer-events-none" />
 
       {/* Decorative floating shapes */}
-      <div className="parallax absolute top-20 left-10 md:left-20">
-        <Star className="w-12 h-12 md:w-16 md:h-16 fill-neo-accent stroke-neo-black stroke-[3] animate-spin-slow" />
-      </div>
-      <div className="parallax absolute top-40 right-10 md:right-32 rotate-12">
-        <div className="w-16 h-16 md:w-20 md:h-20 bg-neo-secondary border-4 border-black animate-float" />
-      </div>
-      <div className="parallax absolute bottom-40 left-16 md:left-40 -rotate-6">
-        <div className="w-12 h-12 md:w-14 md:h-14 bg-neo-muted border-4 border-black rounded-full animate-wiggle" />
-      </div>
-      <div className="parallax absolute top-60 left-1/3 hidden lg:block">
-        <div className="w-8 h-24 bg-neo-accent border-4 border-black rotate-45" />
-      </div>
 
       {/* Giant background text */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
