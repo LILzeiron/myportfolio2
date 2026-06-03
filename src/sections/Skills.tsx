@@ -187,7 +187,7 @@ export default function Skills() {
                 ].map((tech) => (
                   <span
                     key={`${i}-${tech}`}
-                    className="font-black text-2xl md:text-3xl uppercase tracking-tight text-white flex items-center gap-3"
+                    className="font-black text-2xl md:text-3xl uppercase tracking-tight text-white flex items-center gap-8"
                   >
                     <span>{tech}</span>
                     <Star className="w-5 h-5 fill-neo-secondary stroke-none flex-shrink-0" />
