@@ -95,9 +95,8 @@ export default function Skills() {
         {/* Section Header */}
         <div className="mb-12 md:mb-16">
           <div
-            className={`inline-block bg-neo-secondary border-4 border-black px-4 py-2 mb-4 transition-all duration-500 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-            }`}
+            className={`inline-block bg-neo-secondary border-4 border-black px-4 py-2 mb-4 transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
             style={{ boxShadow: '4px 4px 0px 0px #000' }}
           >
             <span className="font-black text-xs uppercase tracking-widest">
@@ -106,16 +105,14 @@ export default function Skills() {
           </div>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
             <h2
-              className={`font-black text-5xl md:text-6xl lg:text-8xl uppercase tracking-tighter transition-all duration-500 delay-100 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-              }`}
+              className={`font-black text-5xl md:text-6xl lg:text-8xl uppercase tracking-tighter transition-all duration-500 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                }`}
             >
               Tools <span className="text-neo-accent">I Use</span>
             </h2>
             <p
-              className={`font-bold text-lg max-w-md transition-all duration-500 delay-200 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-              }`}
+              className={`font-bold text-lg max-w-md transition-all duration-500 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                }`}
             >
               I am familiar with a range of tools, from writing code in Dart and PHP to designing interfaces and editing media.
             </p>
@@ -127,9 +124,8 @@ export default function Skills() {
           {skillCategories.map((category, catIndex) => (
             <div
               key={category.title}
-              className={`transition-all duration-500 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-              }`}
+              className={`transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                }`}
               style={{ transitionDelay: `${300 + catIndex * 100}ms` }}
             >
               <div
@@ -193,8 +189,8 @@ export default function Skills() {
                     key={`${i}-${tech}`}
                     className="font-black text-2xl md:text-3xl uppercase tracking-tight text-white flex items-center gap-3"
                   >
-                    {tech}
-                    <Star className="w-4 h-4 fill-neo-secondary stroke-none inline-block" />
+                    <span>{tech}</span>
+                    <Star className="w-5 h-5 fill-neo-secondary stroke-none flex-shrink-0" />
                   </span>
                 ))}
               </div>
