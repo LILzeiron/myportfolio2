@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Star, X, ChevronLeft, ChevronRight, Sparkles, ZoomIn, ZoomOut, Minimize2 } from 'lucide-react';
+import { Star, X, ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
 
 const projects = [
   {
@@ -51,7 +51,7 @@ export default function Projects() {
   const [activeGallery, setActiveGallery] = useState<string[] | null>(null);
   const [activeTitle, setActiveTitle] = useState<string>('');
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [zoomLevel, setZoomLevel] = useState(1);
+  const [isOverlayOpen, setIsOverlayOpen] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -84,14 +84,12 @@ export default function Projects() {
 
   const closeGallery = () => {
     setActiveGallery(null);
-    setZoomLevel(1);
   };
 
   const nextImage = (e: React.MouseEvent) => {
     e.stopPropagation();
     if (activeGallery) {
       setCurrentImageIndex((prev) => (prev + 1) % activeGallery.length);
-      setZoomLevel(1);
     }
   };
 
@@ -99,7 +97,6 @@ export default function Projects() {
     e.stopPropagation();
     if (activeGallery) {
       setCurrentImageIndex((prev) => (prev - 1 + activeGallery.length) % activeGallery.length);
-      setZoomLevel(1);
     }
   };
 
@@ -231,33 +228,7 @@ export default function Projects() {
                 {activeTitle} Gallery
               </h3>
               <div className="flex items-center gap-2">
-                {/* Zoom Controls */}
-                <button
-                  onClick={() => setZoomLevel((z) => Math.min(z + 0.5, 3))}
-                  className="bg-neo-secondary border-4 border-black p-1 hover:bg-neo-accent transition-colors"
-                  style={{ boxShadow: '3px 3px 0px 0px #000' }}
-                  title="Zoom In"
-                >
-                  <ZoomIn className="w-5 h-5 stroke-[3]" />
-                </button>
-                <button
-                  onClick={() => setZoomLevel((z) => Math.max(z - 0.5, 1))}
-                  className="bg-neo-secondary border-4 border-black p-1 hover:bg-neo-accent transition-colors"
-                  style={{ boxShadow: '3px 3px 0px 0px #000' }}
-                  title="Zoom Out"
-                >
-                  <ZoomOut className="w-5 h-5 stroke-[3]" />
-                </button>
-                {zoomLevel > 1 && (
-                  <button
-                    onClick={() => setZoomLevel(1)}
-                    className="bg-white border-4 border-black p-1 hover:bg-neo-muted transition-colors"
-                    style={{ boxShadow: '3px 3px 0px 0px #000' }}
-                    title="Reset Zoom"
-                  >
-                    <Minimize2 className="w-5 h-5 stroke-[3]" />
-                  </button>
-                )}
+                {/* Close button only */}
                 <button
                   onClick={closeGallery}
                   className="bg-neo-accent border-4 border-black p-1 hover:bg-[#ff5252] transition-colors"
@@ -270,24 +241,36 @@ export default function Projects() {
 
             {/* Carousel Container */}
             <div className="relative aspect-video w-full bg-white border-4 border-black overflow-hidden flex items-center justify-center cursor-zoom-in">
-              <img
-                src={activeGallery[currentImageIndex]}
-                alt={`${activeTitle} Screen ${currentImageIndex + 1}`}
-                className="max-w-full max-h-full object-contain transition-transform duration-300 ease-out"
-                style={{ transform: `scale(${zoomLevel})` }}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setZoomLevel((z) => z < 3 ? z + 0.5 : 1);
-                }}
-                onError={(e) => {
-                  (e.target as HTMLElement).style.display = 'none';
-                  const parent = (e.target as HTMLElement).parentElement;
-                  if (parent) {
-                    const fallback = parent.querySelector('.fallback-project-img');
-                    if (fallback) fallback.classList.remove('hidden');
-                  }
-                }}
-              />
+              {isOverlayOpen ? (
+                <div
+                  className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
+                  onClick={() => setIsOverlayOpen(false)}
+                >
+                  <img
+                    src={activeGallery[currentImageIndex]}
+                    alt={`${activeTitle} Screen ${currentImageIndex + 1}`}
+                    className="max-w-[90vw] max-h-[90vh] object-contain"
+                  />
+                </div>
+              ) : (
+                <img
+                  src={activeGallery[currentImageIndex]}
+                  alt={`${activeTitle} Screen ${currentImageIndex + 1}`}
+                  className="max-w-full max-h-full object-contain cursor-zoom-in"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setIsOverlayOpen(true);
+                  }}
+                  onError={(e) => {
+                    (e.target as HTMLElement).style.display = 'none';
+                    const parent = (e.target as HTMLElement).parentElement;
+                    if (parent) {
+                      const fallback = parent.querySelector('.fallback-project-img');
+                      if (fallback) fallback.classList.remove('hidden');
+                    }
+                  }}
+                />
+              )}
               <div className="fallback-project-img hidden absolute inset-0 bg-neo-cream flex items-center justify-center">
                 <p className="font-black text-lg text-black/60 uppercase">Screen Image Missing: {activeGallery[currentImageIndex]}</p>
               </div>
