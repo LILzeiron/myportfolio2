@@ -103,7 +103,7 @@ export default function Hero() {
           <div className="relative">
             {/* Decorative badge */}
             <div className="absolute -top-6 -right-4 z-20 bg-neo-accent border-4 border-black px-4 py-2 rotate-6 font-black text-sm uppercase tracking-widest shadow-hard-sm">
-              BSIT Student
+              BSIT Graduate
             </div>
 
             {/* Stats Card */}

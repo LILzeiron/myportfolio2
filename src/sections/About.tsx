@@ -50,9 +50,8 @@ export default function About() {
             <div className="h-1 bg-neo-accent flex-grow max-w-[100px] border border-black" />
           </div>
           <h2
-            className={`font-black text-5xl md:text-6xl lg:text-8xl uppercase tracking-tighter leading-tight transition-all duration-500 delay-100 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-            }`}
+            className={`font-black text-5xl md:text-6xl lg:text-8xl uppercase tracking-tighter leading-tight transition-all duration-500 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
           >
             A GLIMPSE <span className="text-stroke">INTO MY</span> BACKGROUND
           </h2>
@@ -62,15 +61,14 @@ export default function About() {
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           {/* Left Column - Avatar Image */}
           <div
-            className={`lg:col-span-5 flex justify-center transition-all duration-500 delay-200 ${
-              isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
-            }`}
+            className={`lg:col-span-5 flex justify-center transition-all duration-500 delay-200 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+              }`}
           >
             <div className="relative group">
               {/* Glow / Shadow effect box behind the image */}
               <div className="absolute inset-0 rounded-full bg-neo-secondary border-4 border-black translate-x-4 translate-y-4 -z-10 group-hover:translate-x-6 group-hover:translate-y-6 transition-transform duration-200" />
               <div className="absolute inset-0 rounded-full bg-neo-accent/20 blur-xl -z-20 group-hover:scale-110 transition-transform duration-200" />
-              
+
               {/* Circular Avatar Frame */}
               <div className="w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-8 border-black bg-neo-cream relative">
                 <img
@@ -97,18 +95,17 @@ export default function About() {
 
           {/* Right Column - Body Copy */}
           <div
-            className={`lg:col-span-7 space-y-8 transition-all duration-500 delay-300 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-            }`}
+            className={`lg:col-span-7 space-y-8 transition-all duration-500 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
           >
             <div
               className="bg-neo-cream border-4 border-black p-8 relative"
               style={{ boxShadow: '8px 8px 0px 0px #000' }}
             >
               <div className="absolute -top-5 -right-4 bg-neo-secondary border-4 border-black px-4 py-1.5 font-black text-xs uppercase tracking-widest rotate-3">
-                ME.
+                CSA.
               </div>
-              
+
               <div className="space-y-6">
                 <p className="font-bold text-xl md:text-2xl leading-relaxed text-black">
                   I’m a recent IT graduate eager to learn and contribute. I enjoy blending code with design to create useful and pleasant experiences.
