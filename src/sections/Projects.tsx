@@ -8,8 +8,8 @@ const projects = [
     description: 'Developed an intelligent tutoring system (mobile + web) delivering personalized learning via games, quizzes, and an AI‑powered chatbot. Utilized machine learning to track student performance, improving accessibility and engagement while providing data‑driven insights for teachers. Technologies used: Flutter, Dart, PHP, CakePHP, Python, Flask, MySQL, DigitalOcean.',
     technologies: ['Flutter', 'Dart', 'PHP', 'CakePHP', 'Python', 'Flask', 'MySQL', 'DigitalOcean'],
     features: [
-      { label: 'Indoor', value: 'Navigation' },
-      { label: 'BLE', value: 'Beacon Tech' }
+      { label: 'AI', value: 'Chatbot' },
+      { label: 'ML', value: 'Analytics' }
     ],
     gallery: [
       'assets/PathWise/1.webp',
@@ -28,7 +28,7 @@ const projects = [
     title: 'PhoneTap',
     platform: 'Mobile · Web',
     description: 'Developed an NFC‑based attendance system using mobile phones to scan student ID cards for fast, contactless time‑in/time‑out with offline support and cloud sync. Reduced queues, prevented long attendance delays, and improved accuracy and efficiency of event monitoring. Technologies used: Flutter, Dart, Typescript, SQLite, PostgreSQL, Supabase, Vercel.',
-    technologies: ['Flutter', 'Dart', 'TypeScript', 'SQLite', 'PostgreSQL', 'Supabase', 'Vercel'],
+    technologies: ['Flutter', 'NFC', 'Payments', 'Security'],
     features: [
       { label: 'NFC', value: 'Tap Attendance' },
       { label: 'Offline', value: 'Cloud Sync' }
